@@ -1,0 +1,14 @@
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\AttorneyService.BusinessLayer.deps.json
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\AttorneyService.BusinessLayer.dll
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\AttorneyService.BusinessLayer.pdb
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\AttorneyService.DataAccessLayer.dll
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\Modal.dll
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\AttorneyService.DataAccessLayer.pdb
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\bin\Debug\netstandard2.0\Modal.pdb
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.csprojAssemblyReference.cache
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.AssemblyInfoInputs.cache
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.AssemblyInfo.cs
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.csproj.CopyComplete
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.dll
+C:\Users\vgupta\source\repos\AttorneyService\AttorneyService.BusinessLayer\obj\Debug\netstandard2.0\AttorneyService.BusinessLayer.pdb
