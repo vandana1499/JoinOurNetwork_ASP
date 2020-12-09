@@ -8,6 +8,9 @@ namespace Modal
    public class Address
     {
         [Required]
+        [Key]
+        public int hno { get; set; }
+        [Required]
         public string Lane1 { get; set; }
         
         public string Lane2 { get; set; }

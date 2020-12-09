@@ -14,6 +14,7 @@ namespace Modal
     }
    public class Attorney
     {
+        [Key]   
         public int id { get; set; }
         [Required]
         public string FirstName { get; set; }

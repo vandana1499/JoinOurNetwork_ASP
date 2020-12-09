@@ -99,7 +99,11 @@
         "frameworks": {
           "netstandard2.0": {
             "targetAlias": "netstandard2.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Modal\\Modal.csproj": {
+                "projectPath": "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Modal\\Modal.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -112,6 +116,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.10, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

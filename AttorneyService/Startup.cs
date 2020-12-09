@@ -1,8 +1,10 @@
 using AttorneyService.BusinessLayer;
+using AttorneyService.DataAccessLayer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -27,7 +29,9 @@ namespace AttorneyService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSingleton<IAttorneyOperation,AttorneyOperation>();
+            services.AddScoped<IAttorneyOperation,AttorneyOperation>();
+            services.AddScoped<IAttorneyRepository,AttorneyRepository>();
+            services.AddDbContextPool<AtorneyDbContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("AttorneyDB")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

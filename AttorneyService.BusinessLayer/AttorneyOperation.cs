@@ -1,4 +1,5 @@
-﻿using Modal;
+﻿using AttorneyService.DataAccessLayer;
+using Modal;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,9 +10,10 @@ namespace AttorneyService.BusinessLayer
     {
         public static List<Attorney> AllAttorney = new List<Attorney>();
         public static int counter=0;
-        public AttorneyOperation()
+        public IAttorneyRepository repository;
+        public AttorneyOperation(IAttorneyRepository attorneyRepository)
         {
-
+            repository=attorneyRepository;
         }
         public string createProfile(Attorney atr)
         {
@@ -28,7 +30,9 @@ namespace AttorneyService.BusinessLayer
             obj.Specialization = atr.Specialization;
             obj.id = ++counter;
             AllAttorney.Add(obj);
-            return "Successfully created the attorney profile";
+            repository.Add(obj);
+            return "Successfully addedd";
+            
         }
         public List<Attorney> getAllProfiles()
         {
