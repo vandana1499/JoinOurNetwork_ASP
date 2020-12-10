@@ -7,8 +7,11 @@ namespace AttorneyService.BusinessLayer
 {
     public interface IAttorneyOperation
     {
-        string createProfile(Attorney atr);
+        Attorney createProfile(Attorney atr);
+        //Attorney updateProfileByID(Attorney atr, int id);
         List<Attorney> getAllProfiles();
+        List<Attorney> getAllProfilesByCity(string city);
+        List<string> getAllProfilesByDistinctCity();
 
         //Attorney editProfile(int id, Attorney ATSObj);
     }

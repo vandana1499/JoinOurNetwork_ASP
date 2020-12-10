@@ -10,6 +10,7 @@
       "AttorneyService.BusinessLayer/1.0.0": {
         "dependencies": {
           "AttorneyService.DataAccessLayer": "1.0.0",
+          "AttorneyService.Mapper": "1.0.0",
           "Modal": "1.0.0",
           "NETStandard.Library": "2.0.3"
         },
@@ -1250,6 +1251,14 @@
           "AttorneyService.DataAccessLayer.dll": {}
         }
       },
+      "AttorneyService.Mapper/1.0.0": {
+        "dependencies": {
+          "Modal": "1.0.0"
+        },
+        "runtime": {
+          "AttorneyService.Mapper.dll": {}
+        }
+      },
       "Modal/1.0.0": {
         "dependencies": {
           "System.ComponentModel.Annotations": "5.0.0"
@@ -2051,6 +2060,11 @@
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
     "AttorneyService.DataAccessLayer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AttorneyService.Mapper/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -29,6 +29,10 @@ namespace AttorneyService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+//            services.AddControllersWithViews()
+//            .AddNewtonsoftJson(options =>
+//    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+//);
             services.AddScoped<IAttorneyOperation,AttorneyOperation>();
             services.AddScoped<IAttorneyRepository,AttorneyRepository>();
             services.AddDbContextPool<AtorneyDbContext>(options=>options.UseSqlServer(Configuration.GetConnectionString("AttorneyDB")));

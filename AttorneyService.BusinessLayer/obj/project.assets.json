@@ -1706,6 +1706,19 @@
           "bin/placeholder/AttorneyService.DataAccessLayer.dll": {}
         }
       },
+      "AttorneyService.Mapper/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Modal": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/AttorneyService.Mapper.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/AttorneyService.Mapper.dll": {}
+        }
+      },
       "Modal/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -6224,6 +6237,11 @@
       "path": "../AttorneyService.DataAccessLayer/AttorneyService.DataAccessLayer.csproj",
       "msbuildProject": "../AttorneyService.DataAccessLayer/AttorneyService.DataAccessLayer.csproj"
     },
+    "AttorneyService.Mapper/1.0.0": {
+      "type": "project",
+      "path": "../Mapper/AttorneyService.Mapper.csproj",
+      "msbuildProject": "../Mapper/AttorneyService.Mapper.csproj"
+    },
     "Modal/1.0.0": {
       "type": "project",
       "path": "../Modal/Modal.csproj",
@@ -6233,6 +6251,7 @@
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
       "AttorneyService.DataAccessLayer >= 1.0.0",
+      "AttorneyService.Mapper >= 1.0.0",
       "Modal >= 1.0.0",
       "NETStandard.Library >= 2.0.3"
     ]
@@ -6271,6 +6290,9 @@
           "projectReferences": {
             "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\AttorneyService.DataAccessLayer\\AttorneyService.DataAccessLayer.csproj": {
               "projectPath": "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\AttorneyService.DataAccessLayer\\AttorneyService.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Mapper\\AttorneyService.Mapper.csproj": {
+              "projectPath": "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Mapper\\AttorneyService.Mapper.csproj"
             },
             "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Modal\\Modal.csproj": {
               "projectPath": "C:\\Users\\vgupta\\source\\repos\\AttorneyService\\Modal\\Modal.csproj"

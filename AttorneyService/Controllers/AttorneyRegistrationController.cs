@@ -22,23 +22,48 @@ namespace AttorneyService.API.Controllers
 
         [HttpGet]
         [Route("getAllProfiles")]
-        public ActionResult<List<Attorney>> getAllProfiles()
+        public ActionResult<Attorney> getAllProfiles()
         {
             return Ok(IAtr.getAllProfiles());
         }
 
-        [HttpPost]
-        [Route("create-profile")]
-        public void createProfile([FromBody] Attorney ATSObj)
+        [HttpGet]
+        [Route("getAllProfiles/{city?}")]
+        public ActionResult<Attorney> getAllProfilesByCity(string ? city)
         {
-            IAtr.createProfile(ATSObj); 
+            return Ok(IAtr.getAllProfilesByCity(city));
         }
 
-        //[HttpPut]
-        //[Route("edit-profile/{id ?}")]
-        //public void editProfile(int? id,[FromBody] Attorney ATSObj)
-        //{
+        [HttpGet]
+        [Route("getAllProfilesByDistinctCity")]
+        public ActionResult<Attorney> getAllProfilesByDistinctCity()
+        {
+            return Ok(IAtr.getAllProfilesByDistinctCity());
+        }
 
+
+        [HttpPost]
+        [Route("create-profile")]
+        public ActionResult<Attorney> createProfile([FromBody] Attorney ATSObj)
+        {
+            var obj = IAtr.createProfile(ATSObj);
+            return Ok(obj); 
+        }
+
+        //[Http]
+        //[Route("getAllProfiles/{city?}")]
+        //public ActionResult<Attorney> getAllProfilesByCity(string? city)
+        //{
+        //    return Ok(IAtr.getAllProfilesByCity(city));
+        //}
+
+
+        //[HttpPut]
+        //[Route("update-profile/{id?}")]
+        //public ActionResult<AttorneyEntities> UpdateProfileByID([FromBody] Attorney ATSObj,int? id)
+        //{
+        //    var obj = IAtr.updateProfileByID(ATSObj,id);
+        //    return Ok(obj);
         //}
 
 

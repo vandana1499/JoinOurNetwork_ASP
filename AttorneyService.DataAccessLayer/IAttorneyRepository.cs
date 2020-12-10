@@ -7,7 +7,8 @@ namespace AttorneyService.DataAccessLayer
 {
    public interface IAttorneyRepository
     {
-        Attorney Add(Attorney atr);
-       
+        AttorneyEntities Add(AttorneyEntities atr);
+        List<AttorneyEntities> GetAttorneys();
+        AttorneyEntities Update(AttorneyEntities atr,int id);
     }
 }

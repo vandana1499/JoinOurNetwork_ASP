@@ -1,0 +1,12 @@
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\bin\Debug\netstandard2.0\AttorneyService.Mapper.deps.json
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\bin\Debug\netstandard2.0\AttorneyService.Mapper.dll
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\bin\Debug\netstandard2.0\AttorneyService.Mapper.pdb
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.AssemblyInfoInputs.cache
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.AssemblyInfo.cs
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.csproj.CoreCompileInputs.cache
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.dll
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.pdb
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\bin\Debug\netstandard2.0\Modal.dll
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\bin\Debug\netstandard2.0\Modal.pdb
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.csprojAssemblyReference.cache
+C:\Users\vgupta\source\repos\AttorneyService\Mapper\obj\Debug\netstandard2.0\AttorneyService.Mapper.csproj.CopyComplete

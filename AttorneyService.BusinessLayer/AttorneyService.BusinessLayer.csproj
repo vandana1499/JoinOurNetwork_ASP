@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\AttorneyService.DataAccessLayer\AttorneyService.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Mapper\AttorneyService.Mapper.csproj" />
     <ProjectReference Include="..\Modal\Modal.csproj" />
   </ItemGroup>
 

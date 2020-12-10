@@ -1,7 +1,9 @@
 ﻿using AttorneyService.DataAccessLayer;
+using AttorneyService.Mapper;
 using Modal;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace AttorneyService.BusinessLayer
@@ -9,40 +11,107 @@ namespace AttorneyService.BusinessLayer
     public class AttorneyOperation:IAttorneyOperation
     {
         public static List<Attorney> AllAttorney = new List<Attorney>();
-        public static int counter=0;
+       
         public IAttorneyRepository repository;
         public AttorneyOperation(IAttorneyRepository attorneyRepository)
         {
             repository=attorneyRepository;
         }
-        public string createProfile(Attorney atr)
+        public Attorney createProfile(Attorney atr)
         {
             Attorney obj = new Attorney();
             obj.FirstName = atr.FirstName;
-            if(atr.LastName!=null)
+            if(atr.MiddleName!=null)
             {
-                obj.LastName = atr.LastName;
+                obj.MiddleName= atr.MiddleName;
 
             }
             obj.LastName = atr.LastName;
             obj.Email = atr.Email;
             obj.Address = atr.Address;
             obj.Specialization = atr.Specialization;
-            obj.id = ++counter;
-            AllAttorney.Add(obj);
-            repository.Add(obj);
-            return "Successfully addedd";
-            
+          
+            //AllAttorney.Add(obj);
+
+           
+           AttorneyEntities AtrResult=repository.Add(obj.ConvertFromAtrToAtrEnt());
+            return AtrResult.ConvertFromAtrEntToAtr();
+
+
+
         }
         public List<Attorney> getAllProfiles()
         {
-            return AllAttorney;
+            var obj= repository.GetAttorneys();
+            List<Attorney> obj1 = new List<Attorney>();
+
+            for(int i=0;i<obj.Count;i++) {
+                var temp=obj[i].ConvertFromAtrEntToAtr();
+                obj1.Add(temp);
+            }
+            return obj1;
+
+        }
+       public List<Attorney> getAllProfilesByCity(string city)
+        {
+            var obj = repository.GetAttorneys();
+            List<Attorney> obj1 = new List<Attorney>();
+
+            for(int i=0;i<obj.Count;i++) {
+                if(obj[i].AddressEntities.City==city) {
+                    var temp = obj[i].ConvertFromAtrEntToAtr();
+                    obj1.Add(temp);
+                }
+            }
+            return obj1;
+
+        }
+        public List<string> getAllProfilesByDistinctCity()
+        {
+            var obj = repository.GetAttorneys();
+
+          
+            List<string> distinct = new List<string>();
+            for (var i = 0; i < obj.Count; i++) {
+                if (!distinct.Contains(obj[i].AddressEntities.City)) {
+                    distinct.Add(obj[i].AddressEntities.City);
+                    
+                }
+            }
+
+            return distinct;
+
         }
 
         //public Attorney editProfile(int id, Attorney ATSObj)
         //{
         //    Attorney obj = AllAttorney.Find(x => x.id == id);
         //}
+        //public Attorney updateProfileByID(Attorney atr,int id)
+        //{
+        //    var obj1 = repository.GetAttorneys();
 
+        //    var obj2 = obj1.First(a => a.id == id);
+
+           
+        //    obj2.FirstName = atr.FirstName;
+        //    if (atr.MiddleName != null) {
+        //        obj2.MiddleName = atr.MiddleName;
+
+        //    }
+        //    obj.LastName = atr.LastName;
+        //    obj.Email = atr.Email;
+        //    obj.Address = atr.Address;
+        //    obj.Specialization = atr.Specialization;
+
+            //AllAttorney.Add(obj);
+
+
+        //    AttorneyEntities AtrResult = repository.Update(obj.ConvertFromAtrToAtrEnt());
+        //    return AtrResult.ConvertFromAtrEntToAtr();
+
+
+
+        //}
     }
 }
