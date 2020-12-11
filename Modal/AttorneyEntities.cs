@@ -8,6 +8,10 @@ namespace Modal
 {
   public class AttorneyEntities
     {
+        public AttorneyEntities()
+        {
+            isActive = true;
+        }
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,6 +24,8 @@ namespace Modal
        
         [EmailAddress]
         public string Email { get; set; }
+
+        public Boolean isActive { get; set; }
 
         [ForeignKey("AddressEntities")]
         public int hno { get; set; }

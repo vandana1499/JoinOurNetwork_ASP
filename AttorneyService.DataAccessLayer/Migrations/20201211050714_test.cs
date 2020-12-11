@@ -33,6 +33,7 @@ namespace AttorneyService.DataAccessLayer.Migrations
                     MiddleName = table.Column<string>(nullable: true),
                     LastName = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
+                    isActive = table.Column<bool>(nullable: false),
                     hno = table.Column<int>(nullable: false),
                     Specialization = table.Column<int>(nullable: false)
                 },

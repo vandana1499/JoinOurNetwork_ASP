@@ -33,17 +33,28 @@ namespace AttorneyService.DataAccessLayer
 
             //}
             var obj = atorneyDbContext.Attorneys.Include("AddressEntities").ToList();
+            var obj1 = from e in atorneyDbContext.Attorneys
+                       select e;
+            //return (List<AttorneyEntities>)obj1;
             return obj;
         }
 
-        public AttorneyEntities Update(AttorneyEntities atr)
+        public AttorneyEntities Delete(AttorneyEntities atr)
         {
-            
-            atorneyDbContext.Attorneys.Add(atr);
-            atorneyDbContext.Address.Add(atr.AddressEntities);
+
+            atorneyDbContext.Attorneys.Update(atr);
             atorneyDbContext.SaveChanges();
             return atr;
         }
+
+        //public AttorneyEntities Update(AttorneyEntities atr)
+        //{
+
+        //    atorneyDbContext.Attorneys.Add(atr);
+        //    atorneyDbContext.Address.Add(atr.AddressEntities);
+        //    atorneyDbContext.SaveChanges();
+        //    return atr;
+        //}
 
     }
 }

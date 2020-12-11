@@ -82,6 +82,17 @@ namespace AttorneyService.BusinessLayer
             return distinct;
 
         }
+       public void DeleteProfileByID(int id)
+        {
+            var obj = repository.GetAttorneys();
+          
+           
+            var obj1=obj.FirstOrDefault(x => x.id == id);
+            obj1.isActive = false;
+            repository.Delete(obj1);
+
+
+        }
 
         //public Attorney editProfile(int id, Attorney ATSObj)
         //{
@@ -93,7 +104,7 @@ namespace AttorneyService.BusinessLayer
 
         //    var obj2 = obj1.First(a => a.id == id);
 
-           
+
         //    obj2.FirstName = atr.FirstName;
         //    if (atr.MiddleName != null) {
         //        obj2.MiddleName = atr.MiddleName;
@@ -104,7 +115,7 @@ namespace AttorneyService.BusinessLayer
         //    obj.Address = atr.Address;
         //    obj.Specialization = atr.Specialization;
 
-            //AllAttorney.Add(obj);
+        //AllAttorney.Add(obj);
 
 
         //    AttorneyEntities AtrResult = repository.Update(obj.ConvertFromAtrToAtrEnt());

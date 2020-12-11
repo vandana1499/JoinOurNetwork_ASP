@@ -12,7 +12,7 @@ namespace AttorneyService.BusinessLayer
         List<Attorney> getAllProfiles();
         List<Attorney> getAllProfilesByCity(string city);
         List<string> getAllProfilesByDistinctCity();
-
+        void DeleteProfileByID(int id);
         //Attorney editProfile(int id, Attorney ATSObj);
     }
 }

@@ -8,6 +8,7 @@ namespace Modal
 {
     public class AddressEntities
     {
+       
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int hno { get; set; }

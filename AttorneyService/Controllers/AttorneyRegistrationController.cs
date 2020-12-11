@@ -66,6 +66,13 @@ namespace AttorneyService.API.Controllers
         //    return Ok(obj);
         //}
 
+        [HttpDelete]
+        [Route("delete-profile/{id?}")]
+        public string DeleteProfileByID(int? id)
+        {
+            IAtr.DeleteProfileByID(Convert.ToInt32(id));
+            return "Successfully deleted";
+        }
 
 
 

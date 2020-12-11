@@ -15,7 +15,10 @@ namespace Modal
     }
    public class Attorney
     {
-
+        public Attorney()
+        {
+            isActive = true;
+        }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
@@ -27,8 +30,9 @@ namespace Modal
         [Required]
         [EmailAddress]
         public string Email{ get; set; }
-        
-       
+
+        public Boolean isActive { get; set; }
+
         [Required]
         public Address Address{ get; set; }
         

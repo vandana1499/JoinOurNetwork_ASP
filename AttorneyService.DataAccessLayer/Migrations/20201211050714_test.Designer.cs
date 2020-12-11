@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AttorneyService.DataAccessLayer.Migrations
 {
     [DbContext(typeof(AtorneyDbContext))]
-    [Migration("20201210094935_test")]
+    [Migration("20201211050714_test")]
     partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -79,6 +79,9 @@ namespace AttorneyService.DataAccessLayer.Migrations
 
                     b.Property<int>("hno")
                         .HasColumnType("int");
+
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
 
                     b.HasKey("id");
 

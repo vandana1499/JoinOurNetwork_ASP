@@ -78,6 +78,9 @@ namespace AttorneyService.DataAccessLayer.Migrations
                     b.Property<int>("hno")
                         .HasColumnType("int");
 
+                    b.Property<bool>("isActive")
+                        .HasColumnType("bit");
+
                     b.HasKey("id");
 
                     b.HasIndex("hno")

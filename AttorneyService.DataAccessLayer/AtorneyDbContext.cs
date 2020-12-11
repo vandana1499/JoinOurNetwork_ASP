@@ -31,6 +31,7 @@ namespace AttorneyService.DataAccessLayer
 
                 entity.Property(e => e.Email)
                 .IsRequired();
+                entity.Property(e => e.isActive);
 
                 entity.Property(e => e.Specialization)
                  .IsRequired();
