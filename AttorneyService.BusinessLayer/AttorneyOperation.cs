@@ -124,5 +124,19 @@ namespace AttorneyService.BusinessLayer
 
 
         //}
+
+
+        public string updateProfileByID(AttorneyPUT ats, int id)
+        {
+            var obj1 = repository.GetAttorneys();
+            var obj2 = obj1.First(a => a.id == id);
+           if(obj2==null) {
+                return "Not found";
+            }
+           else {
+                repository.update(ats, id);
+                return "Successfully updatedd";
+            }
+        }
     }
 }

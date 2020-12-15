@@ -58,13 +58,13 @@ namespace AttorneyService.API.Controllers
         //}
 
 
-        //[HttpPut]
-        //[Route("update-profile/{id?}")]
-        //public ActionResult<AttorneyEntities> UpdateProfileByID([FromBody] Attorney ATSObj,int? id)
-        //{
-        //    var obj = IAtr.updateProfileByID(ATSObj,id);
-        //    return Ok(obj);
-        //}
+        [HttpPut]
+        [Route("update-profile/{id?}")]
+        public ActionResult<AttorneyEntities> UpdateProfileByID([FromBody] AttorneyPUT ATSObj,int? id)
+        {
+            var obj = IAtr.updateProfileByID(ATSObj,Convert.ToInt32(id));
+            return Ok(obj);
+        }
 
         [HttpDelete]
         [Route("delete-profile/{id?}")]

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Modal
 {
-    class AddressPUT
+    public class AddressPUT
     {
        
         public string Lane1 { get; set; }

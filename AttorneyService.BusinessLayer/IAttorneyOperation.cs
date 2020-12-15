@@ -14,5 +14,6 @@ namespace AttorneyService.BusinessLayer
         List<string> getAllProfilesByDistinctCity();
         void DeleteProfileByID(int id);
         //Attorney editProfile(int id, Attorney ATSObj);
+        string updateProfileByID(AttorneyPUT ats, int id);
     }
 }

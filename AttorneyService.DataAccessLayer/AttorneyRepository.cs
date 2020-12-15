@@ -32,11 +32,12 @@ namespace AttorneyService.DataAccessLayer
             //    attorney.Add(row);
 
             //}
-            var obj = atorneyDbContext.Attorneys.Include("AddressEntities").ToList();
+            var obj = atorneyDbContext.Attorneys.AsNoTracking().Include("AddressEntities").AsNoTracking().ToList();
             var obj1 = from e in atorneyDbContext.Attorneys
                        select e;
-            //return (List<AttorneyEntities>)obj1;
-            return obj;
+           
+            return obj1.ToList();
+           // return obj;
         }
 
         public AttorneyEntities Delete(AttorneyEntities atr)
@@ -47,14 +48,42 @@ namespace AttorneyService.DataAccessLayer
             return atr;
         }
 
-        //public AttorneyEntities Update(AttorneyEntities atr)
-        //{
+        public void update(AttorneyPUT atr,int id)
+        {
+            //tracking
+            var attorney = atorneyDbContext.Attorneys.FirstOrDefault(e=>e.id==id);
+            //var attorney = new AttorneyEntities();
+            attorney.FirstName = atr.FirstName;
+            attorney.LastName = atr.LastName;
+            attorney.MiddleName = atr.MiddleName;
+            attorney.Specialization = (specialization)atr.Specialization;
+            attorney.AddressEntities.City=atr.Address.City;
+            attorney.AddressEntities.Lane1 = atr.Address.Lane1;
+            attorney.AddressEntities.Lane2 = atr.Address.Lane2;
+            attorney.AddressEntities.Zip = atr.Address.Zip;
+            attorney.AddressEntities.State = atr.Address.State;
+    
 
-        //    atorneyDbContext.Attorneys.Add(atr);
-        //    atorneyDbContext.Address.Add(atr.AddressEntities);
-        //    atorneyDbContext.SaveChanges();
-        //    return atr;
-        //}
+            //attorney.id = id;
+            //atorneyDbContext.Entry(attorney).State = EntityState.Modified;
+            atorneyDbContext.SaveChanges();
+            
+
+        }
 
     }
 }
+
+
+//FirstName = atr.FirstName,
+//                LastName = atr.LastName,
+//                MiddleName = atr.MiddleName,
+//                Specialization = (specialization)atr.Specialization,
+//                Address = atr.Address != null ? new Address {
+//                    City = atr.Address.City,
+//                    Lane1 = atr.Address.Lane1,
+//                    Lane2 = atr.Address.Lane2,
+//                    State = atr.Address.State,
+//                    Zip = atr.Address.Zip
+//                } : null
+

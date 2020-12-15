@@ -9,7 +9,8 @@ namespace AttorneyService.DataAccessLayer
     {
         AttorneyEntities Add(AttorneyEntities atr);
         List<AttorneyEntities> GetAttorneys();
-        //AttorneyEntities Update(AttorneyEntities atr,int id);
+
         AttorneyEntities Delete(AttorneyEntities atr);
+         void update(AttorneyPUT atr, int id);
     }
 }
