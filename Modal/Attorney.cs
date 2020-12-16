@@ -23,6 +23,7 @@ namespace Modal
         public int id { get; set; }
 
         [Required]
+        
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         [Required]
