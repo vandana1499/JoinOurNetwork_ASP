@@ -19,6 +19,7 @@ namespace AttorneyService.BusinessLayer
         }
         public Attorney createProfile(Attorney atr)
         {
+            //var obj1 = repository.GetAttorneys();
             Attorney obj = new Attorney();
             obj.FirstName = atr.FirstName;
             if(atr.MiddleName!=null)
@@ -28,6 +29,11 @@ namespace AttorneyService.BusinessLayer
             }
             obj.LastName = atr.LastName;
             obj.Email = atr.Email;
+           //foreach(var o in obj1) {
+           //     if(o.Email==atr.Email) {
+           //         return "Unique email id exists";
+           //     }
+           // }
             obj.Address = atr.Address;
             obj.Specialization = atr.Specialization;
           
@@ -82,7 +88,7 @@ namespace AttorneyService.BusinessLayer
             return distinct;
 
         }
-       public void DeleteProfileByID(int id)
+       public List<Attorney> DeleteProfileByID(int id)
         {
             var obj = repository.GetAttorneys();
           
@@ -90,6 +96,8 @@ namespace AttorneyService.BusinessLayer
             var obj1=obj.FirstOrDefault(x => x.id == id);
             obj1.isActive = false;
             repository.Delete(obj1);
+
+            return getAllProfiles();
 
 
         }

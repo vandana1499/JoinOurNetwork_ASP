@@ -32,9 +32,13 @@ namespace AttorneyService.DataAccessLayer
             //    attorney.Add(row);
 
             //}
-            var obj = atorneyDbContext.Attorneys.AsNoTracking().Include("AddressEntities").AsNoTracking().ToList();
+            //var obj = atorneyDbContext.Attorneys.AsNoTracking().Include("AddressEntities").AsNoTracking().ToList();
+            var obj = atorneyDbContext.Attorneys.Include("AddressEntities").ToList();
+
             var obj1 = from e in atorneyDbContext.Attorneys
+                       where e.isActive==true
                        select e;
+                       
            
             return obj1.ToList();
            // return obj;

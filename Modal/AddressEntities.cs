@@ -20,7 +20,7 @@ namespace Modal
 
         public string City { get; set; }
 
-        [Required]
+     
         public string State { get; set; }
 
     
