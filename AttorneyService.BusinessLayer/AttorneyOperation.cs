@@ -19,29 +19,30 @@ namespace AttorneyService.BusinessLayer
         }
         public Attorney createProfile(Attorney atr)
         {
-            //var obj1 = repository.GetAttorneys();
-            Attorney obj = new Attorney();
-            obj.FirstName = atr.FirstName;
-            if(atr.MiddleName!=null)
-            {
-                obj.MiddleName= atr.MiddleName;
 
-            }
-            obj.LastName = atr.LastName;
-            obj.Email = atr.Email;
-           //foreach(var o in obj1) {
-           //     if(o.Email==atr.Email) {
-           //         return "Unique email id exists";
-           //     }
-           // }
-            obj.Address = atr.Address;
-            obj.Specialization = atr.Specialization;
+            //var exists = obj1.Any(x => atr.Email == atr.Email);
           
-            //AllAttorney.Add(obj);
+                Attorney obj = new Attorney();
 
+                obj.FirstName = atr.FirstName;
+                if (atr.MiddleName != null) {
+                    obj.MiddleName = atr.MiddleName;
+
+                }
+                obj.LastName = atr.LastName;
+                obj.Email = atr.Email;
+
+                obj.Address = atr.Address;
+                obj.Specialization = atr.Specialization;
+
+                //AllAttorney.Add(obj);
+
+
+                AttorneyEntities AtrResult = repository.Add(obj.ConvertFromAtrToAtrEnt());
+                return AtrResult.ConvertFromAtrEntToAtr();
+          
+        
            
-           AttorneyEntities AtrResult=repository.Add(obj.ConvertFromAtrToAtrEnt());
-            return AtrResult.ConvertFromAtrEntToAtr();
 
 
 
@@ -102,48 +103,19 @@ namespace AttorneyService.BusinessLayer
 
         }
 
-        //public Attorney editProfile(int id, Attorney ATSObj)
-        //{
-        //    Attorney obj = AllAttorney.Find(x => x.id == id);
-        //}
-        //public Attorney updateProfileByID(Attorney atr,int id)
-        //{
-        //    var obj1 = repository.GetAttorneys();
-
-        //    var obj2 = obj1.First(a => a.id == id);
+      
 
 
-        //    obj2.FirstName = atr.FirstName;
-        //    if (atr.MiddleName != null) {
-        //        obj2.MiddleName = atr.MiddleName;
-
-        //    }
-        //    obj.LastName = atr.LastName;
-        //    obj.Email = atr.Email;
-        //    obj.Address = atr.Address;
-        //    obj.Specialization = atr.Specialization;
-
-        //AllAttorney.Add(obj);
-
-
-        //    AttorneyEntities AtrResult = repository.Update(obj.ConvertFromAtrToAtrEnt());
-        //    return AtrResult.ConvertFromAtrEntToAtr();
-
-
-
-        //}
-
-
-        public string updateProfileByID(AttorneyPUT ats, int id)
+        public Attorney updateProfileByID(AttorneyPUT ats, int id)
         {
             var obj1 = repository.GetAttorneys();
             var obj2 = obj1.First(a => a.id == id);
            if(obj2==null) {
-                return "Not found";
+                throw new CustomNotFoundException("Not found");
             }
            else {
                 repository.update(ats, id);
-                return "Successfully updatedd";
+                return obj1.First(a => a.id == id).ConvertFromAtrEntToAtr();
             }
         }
     }

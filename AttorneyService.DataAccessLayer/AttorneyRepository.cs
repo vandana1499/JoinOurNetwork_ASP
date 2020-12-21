@@ -60,6 +60,7 @@ namespace AttorneyService.DataAccessLayer
             attorney.FirstName = atr.FirstName;
             attorney.LastName = atr.LastName;
             attorney.MiddleName = atr.MiddleName;
+            attorney.Email = atr.Email;
             attorney.Specialization = (specialization)atr.Specialization;
             attorney.AddressEntities.City=atr.Address.City;
             attorney.AddressEntities.Lane1 = atr.Address.Lane1;

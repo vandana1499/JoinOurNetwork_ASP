@@ -62,8 +62,15 @@ namespace AttorneyService.API.Controllers
         [Route("update-profile/{id?}")]
         public ActionResult<AttorneyEntities> UpdateProfileByID([FromBody] AttorneyPUT ATSObj,int? id)
         {
-            var obj = IAtr.updateProfileByID(ATSObj,Convert.ToInt32(id));
-            return Ok(obj);
+            try {
+                var obj = IAtr.updateProfileByID(ATSObj, Convert.ToInt32(id));
+                return Ok(obj);
+            }
+            catch(Exception ex) {
+
+                return NotFound(404);
+            }
+           
         }
 
         [HttpDelete]
